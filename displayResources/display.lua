@@ -3,7 +3,7 @@ filename = params[1]
 
 posOfMonitor = "right"
 
-file = fs.open("displayResources/items/" .. filename, "r")
+file = fs.open("CC-Stuff/displayResources/items/" .. filename, "r")
 itemname = "placeholder"
 steel = "0"
 blocks = {}
