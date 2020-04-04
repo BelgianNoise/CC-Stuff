@@ -54,4 +54,4 @@ end
 
 line = line + 2
 mon.setCursorPos(1, line)
-mon.write("Total amount of Steel need:   " .. steel)
+mon.write("Total amount of Steel needed:   " .. steel)
