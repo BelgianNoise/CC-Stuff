@@ -1,5 +1,6 @@
 local params = {...}
 posOfME = params[1]
+numberOfMessagesSent = 0
 
 while (true)
 do
@@ -10,6 +11,8 @@ do
     rednet.broadcast(items, "items")
     print("Done broadcasting!")
 
+    numberOfMessagesSent = numberOfMessagesSent + 1
+    print(numberOfMessagesSent .. " messages sent since startup!")
     print("Going to sleep for 3sec...")
     sleep(3)
 end
