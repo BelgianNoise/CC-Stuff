@@ -2,6 +2,9 @@ local params = {...}
 posOfModem = params[1]
 posOfMonitor = params[2]
 
+--enable modem
+rednet.open(posOfModem)
+
 while (true)
 do
     print("Listening for new message...")
