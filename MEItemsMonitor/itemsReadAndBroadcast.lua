@@ -1,9 +1,5 @@
 local params = {...}
-posOfModem = params[1]
-posOfME = params[2]
-
---enable modem
-rednet.open(posOfModem)
+posOfME = params[1]
 
 while (true)
 do
