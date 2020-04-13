@@ -1,6 +1,5 @@
-local params = {...}
-posOfMonitor = params[1]
 numberOfMessagesReceived = 0
+mon = peripheral.find("monitor")
 
 while (true)
 do
@@ -9,7 +8,8 @@ do
     print("Received message from sender: " .. sender)
 
     print("Updating monitor...")
-
+    mon.clear()
+    mon.write(mes[1]["name"] ..  ": " .. mes[1]["count"])
     print("Monitor updated!")
     numberOfMessagesReceived = numberOfMessagesReceived + 1
     print(numberOfMessagesReceived .. " messages received since startup!")
