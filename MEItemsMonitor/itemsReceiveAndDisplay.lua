@@ -26,10 +26,10 @@ do
     mon.setCursorPos(1,1)
     --writeItems
     for i=1,10 do
-        displayItemName = split(mes[i]["name"], ":")[-1]
+        displayItemName = split(mes[i]["name"], ":")[2]
         mon.setCursorPos(1, i)
         mon.write(displayItemName)
-        mon.setCursorPos(20, 1)
+        mon.setCursorPos(20, i)
         mon.write( mes[i]["count"] )
     end
     print("Monitor updated!")
