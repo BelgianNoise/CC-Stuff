@@ -14,6 +14,16 @@ function split(s, delimiter)
     return result;
 end
 
+function displayAmount(a)
+    if (d < 1000) then
+        return math.floor(d)
+    else if (d < 1000000) then
+        return math.floor(d / 1000) .. " K"
+    else if (d < 1000000000) then
+        return math.floor(d / 1000000) .. " M"
+    end
+end
+
 while (true)
 do
     print("Listening for new message...")
@@ -21,16 +31,14 @@ do
     print("Received message from sender: " .. sender)
 
     print("Updating monitor...")
-    --cleanup
     mon.clear()
-    mon.setCursorPos(1,1)
     --writeItems
     for i=1,10 do
-        displayItemName = split(mes[i]["name"], ":")[2]
+        displayItemName = split(mes[i]["name"], ":")[-1]
         mon.setCursorPos(1, i)
         mon.write(displayItemName)
         mon.setCursorPos(20, i)
-        mon.write( mes[i]["count"] )
+        mon.write( displayAmount(math.floor(mes[i]["count"])) )
     end
     print("Monitor updated!")
 
