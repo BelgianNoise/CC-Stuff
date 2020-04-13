@@ -42,7 +42,7 @@ do
         mon.write(mes[i]["name"])
 
         amount = displayAmount(math.floor(mes[i]["count"]))
-        ypos = 30 + (5 - string.len(amount))
+        ypos = 30 + (5 - #amount)
         mon.setCursorPos(ypos, i)
         mon.write(  )
     end
