@@ -35,13 +35,16 @@ do
     print("Updating monitor...")
     mon.clear()
     --writeItems
-    for i=1,10 do
-        temp = split(mes[i]["name"], ":")
-        displayItemName = temp[#temp]
+    for i=1,15 do
+        --temp = split(mes[i]["name"], ":")
+        --displayItemName = temp[#temp]
         mon.setCursorPos(1, i)
-        mon.write(displayItemName)
-        mon.setCursorPos(20, i)
-        mon.write( displayAmount(math.floor(mes[i]["count"])) )
+        mon.write(mes[i]["name"])
+
+        amount = displayAmount(math.floor(mes[i]["count"]))
+        ypos = 40 + (5 - string.len(amount))
+        mon.setCursorPos(ypos, i)
+        mon.write(  )
     end
     print("Monitor updated!")
 
