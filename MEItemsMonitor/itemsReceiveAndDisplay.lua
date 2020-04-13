@@ -1,8 +1,18 @@
+rednet.open("back")
+
 numberOfMessagesReceived = 0
 mon = peripheral.find("monitor")
 mon.setTextScale(2)
 mon.clear()
 mon.write("Waiting for first message...")
+
+function split(s, delimiter)
+    result = {};
+    for match in (s..delimiter):gmatch("(.-)"..delimiter) do
+        table.insert(result, match);
+    end
+    return result;
+end
 
 while (true)
 do

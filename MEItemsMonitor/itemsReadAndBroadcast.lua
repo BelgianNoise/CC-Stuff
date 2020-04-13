@@ -1,5 +1,6 @@
-local params = {...}
-posOfME = params[1]
+rednet.open("back")
+posOfME = "bottom"
+
 numberOfMessagesSent = 0
 
 while (true)
