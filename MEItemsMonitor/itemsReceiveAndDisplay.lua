@@ -18,12 +18,17 @@ function displayAmount(d)
     if (d < 1000) then
         return (d)
     elseif (d < 1000000) then
-        return (d / 1000) .. " K"
+        return roundToNthDecimal(d / 1000, 3) .. " K"
     elseif (d < 1000000000) then
-        return (d / 1000000) .. " M"
+        return roundToNthDecimal(d / 1000000, 3) .. " M"
     else
         return "Te veel gewoon makker wtf"
     end
+end
+
+function roundToNthDecimal(num, n)
+    local mult = 10^(n or 0)
+    return math.floor(num * mult + 0.5) / mult
 end
 
 while (true)
@@ -42,7 +47,7 @@ do
         mon.write( displayItemName )
 
         amount = displayAmount(math.floor(mes[i]["count"]))
-        ypos = 30
+        ypos = 30 + (9 - #amount)
         mon.setCursorPos(ypos, i)
         mon.write( amount )
     end
