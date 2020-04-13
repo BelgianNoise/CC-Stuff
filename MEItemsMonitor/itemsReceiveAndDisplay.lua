@@ -16,11 +16,11 @@ end
 
 function displayAmount(d)
     if (d < 1000) then
-        return math.floor(d)
+        return (d)
     elseif (d < 1000000) then
-        return math.floor(d / 1000) .. " K"
+        return (d / 1000) .. " K"
     elseif (d < 1000000000) then
-        return math.floor(d / 1000000) .. " M"
+        return (d / 1000000) .. " M"
     else
         return "Te veel gewoon makker wtf"
     end
@@ -42,7 +42,7 @@ do
         mon.write( displayItemName )
 
         amount = displayAmount(math.floor(mes[i]["count"]))
-        ypos = 30 + (5 - #amount)
+        ypos = 30
         mon.setCursorPos(ypos, i)
         mon.write( amount )
     end
