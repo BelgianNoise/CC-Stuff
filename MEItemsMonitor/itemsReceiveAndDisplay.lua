@@ -14,7 +14,7 @@ function split(s, delimiter)
     return result;
 end
 
-function displayAmount(a)
+function displayAmount(d)
     if (d < 1000) then
         return math.floor(d)
     elseif (d < 1000000) then
