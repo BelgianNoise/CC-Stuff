@@ -37,7 +37,7 @@ do
     --writeItems
     for i=1,10 do
         temp = split(mes[i]["name"], ":")
-        displayItemName = temp[#temp] .. temp[#temp + 1]
+        displayItemName = temp[#temp]
         mon.setCursorPos(1, i)
         mon.write(displayItemName)
         mon.setCursorPos(20, i)
