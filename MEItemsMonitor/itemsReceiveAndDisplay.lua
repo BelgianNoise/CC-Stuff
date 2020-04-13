@@ -17,10 +17,12 @@ end
 function displayAmount(a)
     if (d < 1000) then
         return math.floor(d)
-    else if (d < 1000000) then
+    elseif (d < 1000000) then
         return math.floor(d / 1000) .. " K"
-    else if (d < 1000000000) then
+    elseif (d < 1000000000) then
         return math.floor(d / 1000000) .. " M"
+    else
+        return "Te veel gewoon makker wtf"
     end
 end
 
