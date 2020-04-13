@@ -6,7 +6,7 @@ while (true)
 do
     print("Broadcasting table of items...")
     items = peripheral.call(posOfME, "listAvailableItems")
-    table.sort(items, function(x,y) return x.count < y.count end )
+    table.sort(items, function(x,y) return x.count > y.count end )
 
     rednet.broadcast(items, "items")
     print("Done broadcasting!")

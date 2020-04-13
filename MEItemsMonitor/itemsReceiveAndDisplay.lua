@@ -1,5 +1,7 @@
 numberOfMessagesReceived = 0
 mon = peripheral.find("monitor")
+mon.setTextScale(2)
+mon.write("Waiting for first message...")
 
 while (true)
 do
@@ -9,6 +11,7 @@ do
 
     print("Updating monitor...")
     mon.clear()
+    mon.setCursorPos(1,1)
     mon.write(mes[1]["name"] ..  ": " .. mes[1]["count"])
     print("Monitor updated!")
     numberOfMessagesReceived = numberOfMessagesReceived + 1
